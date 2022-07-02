@@ -1,0 +1,22 @@
+
+{% extends "food/base.html" %}
+
+{% block content %}
+
+{% for item in item %}
+        <div class="row">
+            <div class="col-md-3 offset-md-3">
+                <img src="{{item.image}}" class="card" height="150px">
+            </div>
+            <div class="col-md-4">
+                <h1>{{item.name}}</h1>
+                <h3>{{item.price}}</h3>
+                <h5>{{item.desc}}</h5>
+            </div>
+            <div class="col-md-2">
+                <a href="{%url 'detail' item.id%}" class=" btn btn-info ">detail </a>
+            </div>
+        </div>   
+{%endfor%}
+
+{% endblock content %}
